@@ -32,11 +32,11 @@ class Code
       puts 'Invalid selection. Choose a number betwee 1111 - 6666' unless @secret_code >= 1111 && @secret_code <= 6666
     end
     @secret_code_selected = @secret_code
-    @user_or_pc = 'user_player'
+    @user_or_pc = 'pc_player'
   end
 
   def breaker_selected
     @secret_code_selected = rand(1111...6666)
-    @user_or_pc = 'pc_player'
+    @user_or_pc = 'user_player'
   end
 end
