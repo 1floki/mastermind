@@ -23,13 +23,13 @@ class MasterMind
   def user_plays_game
     until @attempts == 12 || @guessed == true
       @player_game = PlayerGame.new(@code).play
-      condition_check_game
+      condition_check_game_player
     end
   end
 
   def pc_plays_game; end
 
-  def condition_check_game
+  def condition_check_game_player
     if @player_game.join('') == 'XXXX'
       @guessed = true
       puts "Congrats! You guessed the code #{@code} in #{1 + @attempts} attempts"
