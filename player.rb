@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# to play game
+# to play game for user
 class PlayerGame
   def initialize(code_array)
     @code_array = code_array.to_s.split('')
@@ -14,7 +14,7 @@ class PlayerGame
     guess_response
 
     # used explicit return because need to make sure that method returns it
-    return @show_hint_array
+    @show_hint_array
   end
 
   def ask_for_code_user

@@ -9,8 +9,6 @@ class MasterMind
   def initialize(player, code)
     @player = player
     @code = code
-    @attempts = 0
-    @guessed = false
   end
 
   @code_to_guess = @code.to_s.split('')
@@ -21,22 +19,26 @@ class MasterMind
   end
 
   def user_plays_game
-    until @attempts == 12 || @guessed == true
+    @attempts_player = 0
+    @guessed_player = false
+    until @attempts_player == 12 || @guessed_player == true
       @player_game = PlayerGame.new(@code).play
-      condition_check_game_player
+      condition_check_game_player(@player_game)
     end
   end
 
-  def pc_plays_game; end
+  def pc_plays_game
+    # p "Pc plays game works with code #{@code}"
+  end
 
-  def condition_check_game_player
-    if @player_game.join('') == 'XXXX'
-      @guessed = true
-      puts "Congrats! You guessed the code #{@code} in #{1 + @attempts} attempts"
+  def condition_check_game_player(output_array)
+    if output_array.join('') == 'XXXX'
+      @guessed_player = true
+      puts "Congrats! You guessed the code #{@code} in #{1 + @attempts_player} attempts"
     else
-      @attempts += 1
-      puts "#{12 - @attempts} attempts left"
+      @attempts_player += 1
+      puts "#{12 - @attempts_player} attempts left"
+      puts "You failed to break the code. The code is #{@code}." if @attempts_player == 12
     end
   end
 end
-
