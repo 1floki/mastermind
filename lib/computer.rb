@@ -67,5 +67,6 @@ class ComputerPlay
       end
       i += 1
     end
+    puts "Output:\n#{@show_hint_array.join('')}\n"
   end
 end
