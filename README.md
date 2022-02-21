@@ -3,7 +3,7 @@ This program emulates the original Mastermind board game. Learn more about the g
 
 Instructions for playing: 
 1. Clone the repository and cd to the */mastermind folder.
-2. Run *ruby main.rb* to play the game. (Note: repl version will be listed once the program is complete).
+2. Run *ruby main.rb* to play the game. (or use repl.it: https://replit.com/@FlokiProgrammer/mastermind#main.rb).
 3. Choose either "Code Maker" role or "Code Breaker" role.
 4. Instead of colors, this game uses combination of colors from 1111 to 6666. 
 5. If you choose to be a code breaker, you'll have 12 attempts to successfuly guess the computer's randomly generated code. 
