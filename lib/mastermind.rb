@@ -2,6 +2,7 @@
 
 require_relative('code')
 require_relative('player')
+require_relative('computer')
 
 # takes code and maker_or_breaker selection and
 # plays the game
@@ -28,7 +29,8 @@ class MasterMind
   end
 
   def pc_plays_game
-    # p "Pc plays game works with code #{@code}"
+    game = ComputerPlay.new(@code)
+    game.play_game    
   end
 
   def condition_check_game_player(output_array)
